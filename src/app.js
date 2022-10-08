@@ -60,30 +60,6 @@ function updateCity(event) {
   search(cityInput);
 }
 
-// function updateLocation(response) {
-//   console.log(response.data.name);
-//   console.log(response.data.main.temp);
-//   console.log(response.data.weather[0].description);
-//   console.log(response.data.main.humidity);
-//   console.log(response.data.wind.speed);
-
-//   document.querySelector("#chosen-city").innerHTML = `${response.data.name}`;
-//   document.querySelector(
-//     "#current-temperature-value"
-//   ).innerHTML = `${Math.round(response.data.main.temp)}`;
-//   document.querySelector(
-//     "#temp-range"
-//   ).innerHTML = `Min/Max: ${response.data.main.temp_min}/${response.data.main.temp_max}°C`;
-//   document.querySelector(
-//     "#weather-description"
-//   ).innerHTML = `${response.data.weather[0].description}`;
-//   document.querySelector(
-//     "#humidity"
-//   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
-//   document.querySelector(
-//     "#wind"
-//   ).innerHTML = `${response.data.wind.speed}km/hr`;
-// }
 function locationData(position) {
   console.log(position);
   let apiKey = "a710bd8bd76400c9658ef649d9e81728";
