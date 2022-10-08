@@ -1,0 +1,60 @@
+h1 h2 {
+  color: #142d4c;
+}
+
+form {
+  width: 40%;
+}
+h1,
+h2,
+.weather-info {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+.degrees {
+  font-size: 20px;
+}
+body {
+  background-size: cover;
+  background-position: center;
+  background-image: url("../images/blue-sky.jpg");
+  /* opacity: ??; ::after*/
+}
+
+.small-icon {
+  display: inline;
+  font-size: 25px;
+  padding-left: 2rem;
+  color: #142d4c;
+}
+.card-body {
+  display: inline;
+  background-color: #ececec;
+  border-style: solid;
+  border-color: #142d4c;
+}
+.forecast-text {
+  padding-left: 3rem;
+  font-family: "Quando", serif;
+  color: #142d4c;
+}
+.main-icon {
+  font-size: 300px;
+  opacity: 0.3;
+  color: #385170;
+}
+.weather-info {
+  color: #142d4c;
+  position: fixed;
+  margin-top: 10%;
+  margin-left: -17rem;
+  line-height: 3rem;
+  font-size: 25px;
+}
+.search-button {
+  margin-left: 1.4rem;
+}
+
+.current-location {
+  margin-left: 0.5rem;
+}

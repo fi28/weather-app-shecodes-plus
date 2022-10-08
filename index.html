@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+    src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+    src = "https://kit.fontawesome.com/aa7428679b.js";
+    crossorigin = "anonymous";
+    
+    ></script>
+    <title>SheCodesPlusChallenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quando&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <br />      
+      <!-- this is my first column beginning with the row command -->
+      <div class="row">
+        <!-- In the first column will be the form  -->
+        <div class="col-2">
+      <form id = "searchcity" class = "form-inline" >
+        <input
+          id = "city-input"
+          class="form-control"
+          type="location"
+          placeholder="Enter your city here"
+          autofocus
+          
+        />
+       </div>
+       <div class="col-1">
+        <button type="submit" class="btn btn-primary search-button">Submit</button>
+      
+      </form>
+      </div>
+      <div class="col-1">
+        <button type="submit" class="btn btn-success current-location">Current</button>
+
+      </div>
+      </div>
+      <br>
+      <div class="row">
+      <div class="col-6">
+      <div class="card bg-light mb-3 first-day" style="max-width: 25rem;">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fa-regular fa-sun small-icon"></i>
+                <span class="forecast-text"> Monday: 21°C/ 9°C</span>
+              </p>
+            </div>
+          </div>
+          <div class="card bg-light mb-3 second-day" style="max-width: 25rem;">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fa-regular fa-sun small-icon"></i>
+                <span class="forecast-text"> Tuesday: 24°C/ 10°C</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-light mb-3 third-day" style="max-width: 25rem;">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fa-regular fa-sun small-icon"></i>
+                <span class="forecast-text"> Wednesday: 24°C/ 10°C</span>
+              </p>
+            </div>
+          </div>
+          <div class="card bg-light mb-3 fourth-day" style="max-width: 25rem;">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fa-regular fa-sun small-icon"></i>
+                <span class="forecast-text"> Thursday: 24°C/ 10°C</span>
+              </p>
+            </div>
+          </div>
+          <div class="card bg-light mb-3 fifth-day" style="max-width: 25rem;">
+            <div class="card-body">
+              <p class="card-text">
+                <i class="fa-regular fa-sun small-icon"></i>
+                <span class="forecast-text"> Friday: 24°C/ 10°C</span>
+              </p>
+            </div>
+          </div>
+
+          </div>
+
+        
+        <div class="col-6">
+          <h1 id = "city-temp" class="display-6">Currently <span id="current-temperature-value"> </span>°C in <span id = "chosen-city"></span> </h1>
+          <h2 id = time-of-day class="display-6"></h2>
+          
+          <i class="fas fa-solid fa-cloud-sun-rain main-icon"></i>
+          <span class="weather-info">
+            <span id="temp-range">
+            </span>
+            <br>
+            <span id = "weather-description">
+            </span>
+            <br/>
+            <span id="humidity">
+            </span>
+            <br />
+            <span id="wind">
+            </span>
+          </span>
+          </div>
+        
+      <!-- </div> -->
+      
+    </div>
+    </div>
+  </body>
+</html>
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src = "src/app.js"></script>
+
+  </body>
+</html>
