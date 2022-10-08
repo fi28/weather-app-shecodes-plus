@@ -110,4 +110,4 @@ cityForm.addEventListener("submit", updateCity);
 let locationButton = document.querySelector(".current-location");
 locationButton.addEventListener("click", getPosition);
 
-search("Narrabri");
+search("Brisbane");
