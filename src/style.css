@@ -1,4 +1,5 @@
-h1 h2 {
+h1,
+h2 {
   color: #142d4c;
 }
 
@@ -45,16 +46,27 @@ body {
 }
 .weather-info {
   color: #142d4c;
-  position: fixed;
+  position: absolute;
   margin-top: 10%;
   margin-left: -17rem;
   line-height: 3rem;
   font-size: 25px;
 }
 .search-button {
-  margin-left: 1.4rem;
+  margin-left: 2.4rem;
 }
 
 .current-location {
-  margin-left: 0.5rem;
+  margin-left: 2rem;
+}
+
+.container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  /* color: #878787; */
+  /* font-family: Cerebri-Sans,Helvetica,Arial,sans-serif; */
+  padding: 40px;
+  margin-top: 2rem;
+  opacity: 85%;
 }
