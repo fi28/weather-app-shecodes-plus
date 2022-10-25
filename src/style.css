@@ -15,6 +15,7 @@ h2,
 .degrees {
   font-size: 20px;
 }
+
 body {
   background-size: cover;
   background-position: center;
@@ -53,20 +54,22 @@ body {
   font-size: 25px;
 }
 .search-button {
-  margin-left: 2.4rem;
+  margin-left: 3rem;
 }
 
 .current-location {
-  margin-left: 2rem;
+  margin-left: 2.8rem;
 }
 
 .container {
+  max-width: 1050px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
   /* color: #878787; */
   /* font-family: Cerebri-Sans,Helvetica,Arial,sans-serif; */
   padding: 40px;
+  margin: 0 auto;
   margin-top: 2rem;
   opacity: 85%;
 }

@@ -26,29 +26,32 @@ function currentTime(now) {
 }
 
 function updateTemperature(response) {
-  console.log(response.data.wind.speed);
+  console.log(response.data.condition.icon_url);
   let cityName = document.querySelector("#chosen-city");
-  cityName.innerHTML = `${response.data.name}`;
+  cityName.innerHTML = `${response.data.city}`;
   document.querySelector("#current-temperature-value").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
   document.querySelector(
-    "#temp-range"
-  ).innerHTML = `Min/Max: ${response.data.main.temp_min}/${response.data.main.temp_max}°C`;
+    "#feels-like"
+  ).innerHTML = `Feels Like ${response.data.temperature.feels_like} °C`;
   document.querySelector(
     "#weather-description"
-  ).innerHTML = `${response.data.weather[0].description}`;
+  ).innerHTML = `${response.data.condition.description}`;
   document.querySelector(
     "#humidity"
-  ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  ).innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
   document.querySelector(
     "#wind"
-  ).innerHTML = `${response.data.wind.speed}km/hr`;
+  ).innerHTML = `Wind: ${response.data.wind.speed}km/hr`;
+  // document.querySelector(
+  //   ".main-icon"
+  // ).innerHTML = <img src = `${response.data.condition.icon_url}` >
 }
 
 function search(city) {
-  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiKey = "f3a9oa3363ft3b740c40b00ab384f6d4";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   console.log(apiURL);
 
   axios.get(apiURL).then(updateTemperature);
@@ -62,10 +65,10 @@ function updateCity(event) {
 
 function locationData(position) {
   console.log(position);
-  let apiKey = "a710bd8bd76400c9658ef649d9e81728";
+  let apiKey = "f3a9oa3363ft3b740c40b00ab384f6d4";
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+  let apiURL = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}&key=${apiKey}`;
   console.log(apiURL);
 
   axios.get(apiURL).then(updateTemperature);
@@ -86,4 +89,4 @@ cityForm.addEventListener("submit", updateCity);
 let locationButton = document.querySelector(".current-location");
 locationButton.addEventListener("click", getPosition);
 
-search("Brisbane");
+search("Narrabri");
