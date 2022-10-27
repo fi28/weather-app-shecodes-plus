@@ -12,11 +12,7 @@
     />
     <script
     src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script
-    src = "https://kit.fontawesome.com/aa7428679b.js";
-    crossorigin = "anonymous";
-    
-    ></script>
+
     <title>SheCodesPlusChallenge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -107,7 +103,11 @@
           <h1 id = "city-temp" class="display-6">Currently <span id="current-temperature-value"> </span>°C in <span id = "chosen-city"></span> </h1>
           <h2 id = time-of-day class="display-6"></h2>
           
-          <i class="fas fa-solid fa-cloud-sun-rain main-icon"></i>
+          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                alt = "clear-sky-day"
+                id = "main-icon"
+                class = ""
+                /> 
           <span class="weather-info">
             <span id= "feels-like">
               Feels Like

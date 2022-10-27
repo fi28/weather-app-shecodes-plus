@@ -44,9 +44,14 @@ function updateTemperature(response) {
   document.querySelector(
     "#wind"
   ).innerHTML = `Wind: ${response.data.wind.speed}km/hr`;
+  let weatherImage = document.querySelector("#main-icon");
+  weatherImage.setAttribute("src", `${response.data.condition.icon_url}`);
+  weatherImage.setAttribute("alt", `${response.data.condition.description}`);
+  // let timeIs = document.querySelector("#time-of-day");
+  // timeIs.innerHTML = currentTime(response.data.time * 1000);
   // document.querySelector(
   //   ".main-icon"
-  // ).innerHTML = <img src = `${response.data.condition.icon_url}` >
+  // ).innerHTML = <img src = `${response.data.condition.icon_url}` >  ${response.data.icon}.png`
 }
 
 function search(city) {
