@@ -30,7 +30,7 @@
       <!-- this is my first column beginning with the row command -->
       <div class="row">
         <!-- In the first column will be the form  -->
-        <div class="col-2">
+        <div class="col-3">
       <form id = "searchcity" class = "form-inline" >
         <input
           id = "city-input"
@@ -100,7 +100,7 @@
 
         
         <div class="col-6">
-          <h1 id = "city-temp" class="display-6">Currently <span id="current-temperature-value"> </span>°C in <span id = "chosen-city"></span> </h1>
+          <h1 id = "city-temp" class="display-6">Currently <span  id="current-temperature-value"></span><sup><span class = "units"><a href = "#" id="celsius-link" class="active">°C</a></sup></a></span> | <span class = "units"><sup><a id = "farenhite-link" href="#">°F</a></sup></span> in <span id = "chosen-city"></span> </h1>
           <h2 id = time-of-day class="display-6"></h2>
           
           <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"

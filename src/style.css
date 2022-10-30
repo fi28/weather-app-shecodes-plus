@@ -15,6 +15,9 @@ h2,
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
+form {
+  margin-left: 0.5rem;
+}
 .degrees {
   font-size: 20px;
 }
@@ -56,13 +59,15 @@ body {
   line-height: 2.5rem;
   font-size: 25px;
 }
-.search-button {
+/* .search-button {
   margin-left: 3rem;
-}
+  position: relative;
+} */
 
-.current-location {
-  margin-left: 2.8rem;
-}
+/* .current-location { */
+/* margin-left: 2.8rem;
+  position: relative; */
+/* } */
 
 .container {
   max-width: 1050px;
@@ -78,4 +83,17 @@ body {
 }
 #weather-description {
   text-transform: capitalize;
+}
+#farenhite-link,
+#celsius-link {
+  font-size: 20px;
+  border-bottom: -34px;
+}
+.units .active {
+  text-decoration: none;
+  color: #142d4c;
+}
+.units .active:hover {
+  cursor: default;
+  text-decoration: none;
 }
