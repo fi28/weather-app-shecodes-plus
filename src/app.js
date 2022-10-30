@@ -134,4 +134,4 @@ celsiusLink.addEventListener("click", celsiusConversion);
 
 let celsiusTemp = null;
 
-search("Narrabri");
+search("Brisbane");
