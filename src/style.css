@@ -26,7 +26,6 @@ body {
   background-size: cover;
   background-position: center;
   background-image: url("../images/blue-sky.jpg");
-  /* opacity: ??; ::after*/
 }
 
 .small-icon {
@@ -63,28 +62,16 @@ body {
 .search-button {
   margin-left: -0.5rem;
 }
-/* .search-button {
-  margin-left: 3rem;
-  position: relative;
-} */
-
-/* .current-location { */
-/* margin-left: 2.8rem;
-  position: relative; */
-/* } */
 
 .container {
   max-width: 950px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
-  /* color: #878787; */
-  /* font-family: Cerebri-Sans,Helvetica,Arial,sans-serif; */
   padding: 40px;
   margin: 0 auto;
   margin-top: 2rem;
   opacity: 88%;
-  /* transform: scale(0.8, 0.8); */
 }
 #weather-description {
   text-transform: capitalize;
