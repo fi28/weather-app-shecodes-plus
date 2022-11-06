@@ -2,7 +2,6 @@
 
 function currentTime(time) {
   let now = new Date();
-  // console.log(now);
   let days = [
     "Sunday",
     "Monday",
@@ -14,7 +13,6 @@ function currentTime(time) {
   ];
   let dayNumber = now.getDay();
   let day = days[dayNumber];
-  console.log(day);
   let hour = now.getHours();
   let minutes = now.getMinutes();
   if (hour < 10) {
@@ -26,8 +24,6 @@ function currentTime(time) {
   let timeDay = `${day} ${hour}:${minutes}`;
   let timeIs = document.querySelector("#time-of-day");
   timeIs.innerHTML = `${timeDay}`;
-  // return timeDay;
-  // let timeDay = currentTime(now);
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -69,60 +65,18 @@ function updateForecast(response) {
           </div>`;
     }
   });
-  // forecastHTML = forecastHTML `` close anythin that needs it  here
+  // forecastHTML = forecastHTML `` close anythin that needs to be closed here
   forecastElement.innerHTML = forecastHTML;
-
-  // forecastElement.innerHTML = `
-
-  //         <div class="card bg-light mb-3 second-day" style="max-width: 22.5rem;">
-  //           <div class="card-body">
-  //             <p class="card-text">
-  //               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
-  //               <span class="forecast-text"> <span id = "fc-day">Tuesday</span>: <span id="fc-max">24</span>°C/ <span id="fc-min">10</span>°C</span>
-  //             </p>
-  //           </div>
-  //         </div>
-
-  //         <div class="card bg-light mb-3 third-day" style="max-width: 22.5rem;">
-  //           <div class="card-body">
-  //             <p class="card-text">
-  //               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
-  //               <span class="forecast-text"> <span id = "fc-day"> Wednesday</span>: <span id="fc-max">24</span>°C/ <span id="fc-min">19</span>°C</span>
-  //             </p>
-  //           </div>
-  //         </div>
-  //         <div class="card bg-light mb-3 fourth-day" style="max-width: 22.5rem;">
-  //           <div class="card-body">
-  //             <p class="card-text">
-  //               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
-  //               <span class="forecast-text"> <span id = "fc-day"> Thursday</span>: <span id="fc-max">2</span>°C/ <span id="fc-min">10</span>°C</span>
-  //             </p>
-  //           </div>
-  //         </div>
-  //         <div class="card bg-light mb-3 fifth-day" style="max-width: 22.5rem;">
-  //           <div class="card-body">
-  //             <p class="card-text">
-  //               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
-  //               <span class="forecast-text"> <span id = "fc-day"> Friday</span>: <span id="fc-max">24</span>°C/ <span id="fc-min">10</span>°C</span>
-  //             </p>
-  //           </div>
-  //         </div>`;
-
-  // console.log(response);
-  console.log(response.data.daily);
 }
 function forecastSearch(city) {
   let cityName = city;
   cityName = city.trim();
   let apiKey = "f3a9oa3363ft3b740c40b00ab384f6d4";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${cityName}&key=${apiKey}`;
-  console.log(apiURL);
   axios.get(apiURL).then(updateForecast);
 }
 
 function updateTemperature(response) {
-  // console.log(response.data.condition.icon_url);
-
   let cityName = document.querySelector("#chosen-city");
   cityName.innerHTML = `${response.data.city}`;
 
@@ -148,10 +102,9 @@ function updateTemperature(response) {
   weatherImage.setAttribute("alt", `${response.data.condition.description}`);
   let timePlace = response.data.time;
   timePlace = timePlace * 1000;
-  // console.log(timePlace);
+
   currentTime(timePlace);
 
-  // Forecast Info - not working
   let city = `${response.data.city}`;
   forecastSearch(city);
 }
@@ -159,8 +112,6 @@ function updateTemperature(response) {
 function search(city) {
   let apiKey = "f3a9oa3363ft3b740c40b00ab384f6d4";
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  // console.log(apiURL);
-
   axios.get(apiURL).then(updateTemperature);
 }
 
@@ -171,17 +122,14 @@ function updateCity(event) {
 }
 
 function locationData(position) {
-  // console.log(position);
   let apiKey = "f3a9oa3363ft3b740c40b00ab384f6d4";
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
   let apiURL = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}&key=${apiKey}`;
-  console.log(apiURL);
 
   axios.get(apiURL).then(updateTemperature);
 }
 function getPosition() {
-  // console.log("yay");
   navigator.geolocation.getCurrentPosition(locationData);
 }
 
