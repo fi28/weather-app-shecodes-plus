@@ -17,7 +17,7 @@ function celsiusConversion(event) {
 }
 
 function currentTime(time) {
-  let now = new Date(time);
+  let now = new Date();
   // console.log(now);
   let days = [
     "Sunday",
@@ -45,21 +45,45 @@ function currentTime(time) {
   // return timeDay;
   // let timeDay = currentTime(now);
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+  return days[day];
+}
 function updateForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast-info");
   let forecastHTML = ``;
-  let days = ["Monday", "Tuesday", "Funnesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="card bg-light mb-3 first-day" style="max-width: 22.5rem;">
+  forecast.forEach(function (forecastDaily, index) {
+    //remember that we are already in the daily info due to the forecast.forEach
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="card bg-light mb-3 first-day" style="max-width: 22.5rem;">
             <div class="card-body">
               <p class="card-text">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
-                <span class="forecast-text"> <span id = "fc-day">${day}</span>: <span id="fc-max">21</span>°C/ <span id="fc-min">9</span>°C</span>
+                <img src=${forecastDaily.condition.icon_url} width="40px"/>
+                <span class="forecast-text"> <span id = "fc-day">${formatDay(
+                  forecastDaily.time
+                )}</span>: <span id="fc-max">${Math.round(
+          forecastDaily.temperature.maximum
+        )}</span>°C/ <span id="fc-min">${Math.round(
+          forecastDaily.temperature.minimum
+        )}</span>°C</span>
               </p>
             </div>
           </div>`;
+    }
   });
   // forecastHTML = forecastHTML `` close anythin that needs it  here
   forecastElement.innerHTML = forecastHTML;
@@ -101,7 +125,7 @@ function updateForecast(response) {
   //         </div>`;
 
   // console.log(response);
-  console.log(response.data);
+  console.log(response.data.daily);
 }
 function forecastSearch(city) {
   let cityName = city;
@@ -138,7 +162,8 @@ function updateTemperature(response) {
   let weatherImage = document.querySelector("#main-icon");
   weatherImage.setAttribute("src", `${response.data.condition.icon_url}`);
   weatherImage.setAttribute("alt", `${response.data.condition.description}`);
-  let timePlace = response.data.time * 1000;
+  let timePlace = response.data.time;
+  timePlace = timePlace * 1000;
   // console.log(timePlace);
   currentTime(timePlace);
 
