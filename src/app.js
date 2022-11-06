@@ -46,11 +46,66 @@ function currentTime(time) {
   // let timeDay = currentTime(now);
 }
 function updateForecast(response) {
+  let forecastElement = document.querySelector("#forecast-info");
+  let forecastHTML = ``;
+  let days = ["Monday", "Tuesday", "Funnesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card bg-light mb-3 first-day" style="max-width: 22.5rem;">
+            <div class="card-body">
+              <p class="card-text">
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
+                <span class="forecast-text"> <span id = "fc-day">${day}</span>: <span id="fc-max">21</span>°C/ <span id="fc-min">9</span>°C</span>
+              </p>
+            </div>
+          </div>`;
+  });
+  // forecastHTML = forecastHTML `` close anythin that needs it  here
+  forecastElement.innerHTML = forecastHTML;
+
+  // forecastElement.innerHTML = `
+
+  //         <div class="card bg-light mb-3 second-day" style="max-width: 22.5rem;">
+  //           <div class="card-body">
+  //             <p class="card-text">
+  //               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
+  //               <span class="forecast-text"> <span id = "fc-day">Tuesday</span>: <span id="fc-max">24</span>°C/ <span id="fc-min">10</span>°C</span>
+  //             </p>
+  //           </div>
+  //         </div>
+
+  //         <div class="card bg-light mb-3 third-day" style="max-width: 22.5rem;">
+  //           <div class="card-body">
+  //             <p class="card-text">
+  //               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
+  //               <span class="forecast-text"> <span id = "fc-day"> Wednesday</span>: <span id="fc-max">24</span>°C/ <span id="fc-min">19</span>°C</span>
+  //             </p>
+  //           </div>
+  //         </div>
+  //         <div class="card bg-light mb-3 fourth-day" style="max-width: 22.5rem;">
+  //           <div class="card-body">
+  //             <p class="card-text">
+  //               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
+  //               <span class="forecast-text"> <span id = "fc-day"> Thursday</span>: <span id="fc-max">2</span>°C/ <span id="fc-min">10</span>°C</span>
+  //             </p>
+  //           </div>
+  //         </div>
+  //         <div class="card bg-light mb-3 fifth-day" style="max-width: 22.5rem;">
+  //           <div class="card-body">
+  //             <p class="card-text">
+  //               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" width="40px"/>
+  //               <span class="forecast-text"> <span id = "fc-day"> Friday</span>: <span id="fc-max">24</span>°C/ <span id="fc-min">10</span>°C</span>
+  //             </p>
+  //           </div>
+  //         </div>`;
+
   // console.log(response);
   console.log(response.data);
 }
 function forecastSearch(city) {
   let cityName = city;
+  cityName = city.trim();
   let apiKey = "f3a9oa3363ft3b740c40b00ab384f6d4";
   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${cityName}&key=${apiKey}`;
   console.log(apiURL);

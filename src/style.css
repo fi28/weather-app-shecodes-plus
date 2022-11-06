@@ -42,7 +42,7 @@ body {
   border-color: #142d4c;
 }
 .forecast-text {
-  padding-left: 3rem;
+  padding-left: 2rem;
   font-family: "Quando", serif;
   color: #142d4c;
 }
@@ -59,6 +59,10 @@ body {
   line-height: 2.5rem;
   font-size: 25px;
 }
+
+.search-button {
+  margin-left: -0.5rem;
+}
 /* .search-button {
   margin-left: 3rem;
   position: relative;
@@ -70,7 +74,7 @@ body {
 /* } */
 
 .container {
-  max-width: 1050px;
+  max-width: 950px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
@@ -80,6 +84,7 @@ body {
   margin: 0 auto;
   margin-top: 2rem;
   opacity: 85%;
+  /* transform: scale(0.8, 0.8); */
 }
 #weather-description {
   text-transform: capitalize;
