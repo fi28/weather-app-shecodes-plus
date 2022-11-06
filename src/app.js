@@ -49,10 +49,10 @@ function updateForecast(response) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="card bg-light mb-3 first-day" style="max-width: 22.5rem;">
+        `<div class="card bg-light mb-3 day" style="max-width: 22.5rem;">
             <div class="card-body">
               <p class="card-text">
-                <img src=${forecastDaily.condition.icon_url} width="40px"/>
+                <img src=${forecastDaily.condition.icon_url} width="50px"/>
                 <span class="forecast-text"> <span id = "fc-day">${formatDay(
                   forecastDaily.time
                 )}</span>: <span id="fc-max">${Math.round(
