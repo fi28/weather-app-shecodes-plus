@@ -89,16 +89,8 @@ body {
 #weather-description {
   text-transform: capitalize;
 }
-#farenhite-link,
-#celsius-link {
+
+#celsius {
   font-size: 20px;
   border-bottom: -34px;
-}
-.units .active {
-  text-decoration: none;
-  color: #142d4c;
-}
-.units .active:hover {
-  cursor: default;
-  text-decoration: none;
 }

@@ -1,20 +1,4 @@
 //we want day and and time
-function farenhiteConversion(event) {
-  event.preventDefault;
-
-  let currentTemp = document.querySelector("#current-temperature-value");
-  currentFarenhiteTemp = Math.round((celsiusTemp * 9) / 5 + 32);
-  currentTemp.innerHTML = `${currentFarenhiteTemp}`;
-  celsiusLink.classList.remove("active");
-  farenhiteLink.classList.add("active");
-}
-function celsiusConversion(event) {
-  event.preventDefault;
-  let currentTemp = document.querySelector("#current-temperature-value");
-  currentTemp.innerHTML = `${celsiusTemp}`;
-  celsiusLink.classList.add("active");
-  farenhiteLink.classList.remove("active");
-}
 
 function currentTime(time) {
   let now = new Date();
@@ -206,11 +190,6 @@ cityForm.addEventListener("submit", updateCity);
 
 let locationButton = document.querySelector(".current-location");
 locationButton.addEventListener("click", getPosition);
-
-let farenhiteLink = document.querySelector("#farenhite-link");
-farenhiteLink.addEventListener("click", farenhiteConversion);
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", celsiusConversion);
 
 let celsiusTemp = null;
 
